@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Random Number Dice</title>
+    </head>
+    <body>
+        <label for = "diceNumber"> Enter how many sides your dice has; </label>
+        <input type = "number" id = "diceNumber" min = "1">
+        <button onclick="rollDice()" >Click me to roll dice.</button>
+        <div id="result"> </div>
+
+        <script>
+            function rollDice(){
+                const userInput = document.getElementById("diceNumber").value;
+                const resultElement = document.getElementById("result");
+                const min = 1;
+                if (userInput < 1) {
+                    resultElement.innerText = "Try again wise guy";
+                } else {
+                    var diceNumber = parseInt(userInput);
+                const randomNumber= Math.floor(Math.random() * diceNumber) + min;
+                
+                resultElement.innerText = "You rolled a " + randomNumber; 
+                }
+                
+            }
+        </script>
+    </body>
+</html>
