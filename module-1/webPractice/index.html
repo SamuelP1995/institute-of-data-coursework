@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>page title</title>
+<link rel="stylesheet" href="styles.CSS"/>
+<meta charset="utf-8">
+</head>
+<body>
+<header>
+    <h1 id="header">Header</h1>
+</header>
+<section>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Articles</a></li>
+        </ul>
+    </nav>
+<article>
+    <h2>Free Cats to Good Home</h2>
+    <div>
+        <p>Thes cats are perfect for families with new homes or singles with apartments.</p>
+        <a href="https://www.google.com/">More information...</a>
+    </div>
+    
+    <video controls height="300" width="500">
+        <video src="https://www.videvo.net/video/pair-of-lionesses-walking-together/463057/" >
+        <a href="https://www.videvo.net/video/pair-of-lionesses-walking-together/463057/"></a>
+    </video>
+</article>
+    <aside id="aside">
+        <h2>Shipping Information</h2>
+        <form id = "Shipping">
+            <label for = "Address" > Address: </label>
+            <input type = "text" id = "Address" name = "Address"><br>
+            <label for = "City" > City: </label>
+            <input type = "text" id = "City" name = "City"><br>
+            <label for  = "State" > State: </label>
+            <input type = "text" id = "State" name = "State"><br>
+            <label for = "Zipcode" > Zipcode: </label>
+            <input type = "text" id="Zipcode" name="Zipcode"><br>
+            <button onclick ="orderMe()" > Order Now!!!</button>
+    </aside>
+</section>
+<footer>
+    <p>@copyright 2050 by nobody. all rights reversed</p>
+</footer>
+</body>
+<script>
+    document.getElementById('header').innerHTML ='Free Cats!!!';
+    document.getElementById('aside').style.backgroundColor= 'green';
+    function orderMe(){
+        alert("Congratulations, you've ordered a lion...")
+    }
+</script>
+</html>
