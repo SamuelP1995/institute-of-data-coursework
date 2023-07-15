@@ -1,0 +1,128 @@
+*{
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Helvetica Neue','Arial Nova',Helvetica,Arial,sans-serif;
+}
+.top-container {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+.header > div {
+    text-align: center;
+    font-size: 15px;
+}
+.nav-bar {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content:space-around;
+    background-color:black; 
+}
+.nav-bar > div{
+    flex-flow: row nowrap;
+    justify-content: center;
+    background-color: black;
+    color: antiquewhite;
+    text-align: center;
+    font-size: 15px;
+}
+a:link{
+    color: white;
+}
+a:visited{
+    color: white;
+}
+a:hover{
+    color:bisque;
+    background-color: black;
+}
+a:active{
+    color: white;
+}
+.both-columns{
+    display: flex;
+    justify-content: center;
+}
+.left-column{
+    display: inline-block;
+    float: left;
+    margin-left: 10px;
+    width: 700px;
+}
+.right-column{
+    display: inline-block;
+    float: right;
+    width: 300px;
+    flex-shrink: 100;
+    margin-left: 30px;
+}
+.big-headline {
+    flex-flow: column wrap;
+    padding-right: 5px;
+    border-right: 1px solid grey;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.big-headline > div{
+    font-size: 40px;
+    font-weight: bolder;
+}
+.small-headline {
+    display: flex;
+    justify-content: space-between;
+}
+.small-headline > div{
+    font-size: 13px;
+    font-weight: bold;
+}
+.watch-now{
+    padding-bottom: 15px;
+    border-bottom: 1px solid deepskyblue;
+}
+.watch-now > div{
+    font-size: 12px;
+    margin-top: -15px;
+}
+.top-headlines{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+.top-headlines > div{
+    border-bottom: 2px solid grey;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+.improvements{
+    margin-top: 100px;
+    font-size: 15px;
+    text-align: center;
+    border: 10px solid deepskyblue;
+}
+footer{
+    clear: both;
+    display: block; 
+    padding: 40px;
+    margin-bottom: 50px;
+}
+footer > div{
+    margin-top: 10px;
+    padding-right: 40px;
+    display: inline-flex;
+    flex-flow: column nowrap;
+    text-align: start;
+    font-size: 14px;
+    flex-grow: 1;
+}
