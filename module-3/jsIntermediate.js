@@ -3,18 +3,15 @@
 //Exercise 1
 let lowerCase1 = "los angeles";
 let lowerCase2 = "every first leter should be capitalized";
-let lowerCase3 = "i aM a hARd ONE";
 function upperCase(str) {
     return str.replace(/\b\w/g,function(match){  //\b represents a word boundry,
         return match.toUpperCase();              //\w matches any word character
     });                                // /g flag ensures all occurences are replaced
 }
 let capitalizedSentence1 = upperCase(lowerCase1);
-let capitalizedSentence2 = upperCase(lowerCase2);
-let capitalizedSentence3 = upperCase(lowerCase3); 
+let capitalizedSentence2 = upperCase(lowerCase2); 
 console.log(capitalizedSentence1);
 console.log(capitalizedSentence2);
-console.log(capitalizedSentence3);
 
 
 //Exercise 2
@@ -98,7 +95,7 @@ let salaries = {
     "Christina" : 75000,
     "James" : 43000
     };
-    const sumSalaries = salaries.reduce(currentTotal, currentSalary) => currentTotal + currentSalary.
+    const sumSalaries = salaries.reduce(currentTotal, currentSalary) => currentTotal + currentSalary;
 
 //Exersice 10
 const today = new Date();
