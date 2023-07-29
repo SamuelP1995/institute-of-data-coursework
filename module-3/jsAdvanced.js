@@ -78,7 +78,7 @@ setTimeout( () => car.description, 200);
 let car2 = {... car};
 car2.year = 1989;
 let car3 = {...car};
-car.make = "Ford";
+car3.make = "Ford";
 
 
 //Exercise 6
@@ -131,12 +131,19 @@ class PrescisionClock extends DigitalClock {
     construtor(prefix, precision) {
         super(prefix);
         this.precision = precision;
+        if (precision === undefined){
+            precision = 1000;
+        }
+        setTimeout(precision);
     }
 }
 class AlarmClock extends DigitalClock {
     constructor(prefix, wakeupTime) {
         super(prefix);
         this.wakeupTime = wakeupTime;
+        if (wakeupTime === undefined){
+            wakeupTime = 07:00
+        }
     }
 }
 const myClock = new DigitalClock('my clock:')
@@ -156,7 +163,7 @@ function randomDelay() {
     } else reject('Error');
 }
 randomDelay().then(() => console.log(`There appears to have been a delay. Delay value = ${randomSec}`));
-randomDelay().catch(() => console.log(`Rejected promis caught. Delay value = ${randomSec}`));
+randomDelay().catch(() => console.log(`Rejected promise caught. Delay value = ${randomSec}`));
 
 
 //Exersice 10
