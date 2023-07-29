@@ -96,6 +96,7 @@ inigo.greeting(rugen)
 //Exersise 7
 const basketballGame = {
     score: 0,
+    foul: 0,
     freeThrow() {
     this.score++;
     return this;
@@ -115,10 +116,7 @@ const basketballGame = {
     fullTime() {
         console.log('Final score is ' + this.score);
         return this;
-    }
-}
-const fouls = {
-    foul: 0,
+    },
     foulNum() {
         this.foul++;
         return this;
@@ -132,7 +130,9 @@ const fouls = {
         return this;
     }
 }
-basketballGame.basket().freeThrow().freeThrow().basket().threePointer().halfTime().fullTime();
+ 
+basketballGame.basket().freeThrow().freeThrow().basket().threePointer().
+    halfTime().fullTime().foulNum().foulNum().halfTimeFoul().fullTimeFoul();
 
 
 //Exersise 8
@@ -162,7 +162,7 @@ for (let key in newOrleans) {
 let teamSports = ['Hockey', 'Cricket', 'Volleyball'];
 let dog1 = 'Bingo';
 let cat1 = { name: 'Fluffy', breed: 'Siberian' };
-let moreSports = teamSports
+let moreSports = [...teamSports];
 moreSports.push('Baseball') + moreSports.unshift('Soccer');
 let dog2 = dog1;
 dog2 = 'Honey';
@@ -178,6 +178,7 @@ function Person(name, age) {
     this.age = age;
     this.human = true;
     this.canDrive =  () => (age > 15) ? 'Yay you can drive!' : 'Cant drive yet!';
+    console.log(this.canDrive);
     }
 let person1 = new Person('Ben',20)
 let person2 = new Person('Tom',22)
@@ -189,6 +190,7 @@ class PersonClass{
         this.age = age;
         this.human = true;
         this.canDrive = () => (age > 15) ? 'Yay you can drive!' : 'Cant drive yet!';
+        console.log(this.canDrive);
     }
 }
 let person3 = new PersonClass('Larry', 15)
