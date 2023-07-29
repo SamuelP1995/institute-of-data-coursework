@@ -38,7 +38,12 @@ function replaceMiddleValue(animals, newValue){
 
 
 //Exersice 4
+function camelCase(str){
 
+}
+console.log(camelCase('margin-left')) // marginLeft
+console.log(camelCase('background-image')) // backgroundImage
+console.log(camelCase('display')) // display
 
 //Exersice 5
 
@@ -46,7 +51,7 @@ function replaceMiddleValue(animals, newValue){
 //Exersice 6
 const colors = ['red', 'green', 'blue', 'yellow', 'orange', 'red', 'blue', 'yellow']
 const testScores = [55, 84, 97, 63, 55, 32, 84, 91, 55, 43]
-const unique 
+const unique = (arr) => arr.filter((value, index, self) => self.indexOf(value) === index);
 console.log(unique(colors)) // [ 'red', 'green', 'blue', 'yellow', 'orange' ]
 console.log(unique(testScores)) // [ 55, 84, 97, 63, 32, 91, 43 ]
 
@@ -60,11 +65,11 @@ const books = [
     { id: 4, title: 'Brave New World', author: 'Aldous Huxley', year: 1932 },
     { id: 5, title: 'The Catcher in the Rye', author: 'J.D. Salinger', year: 1951 },
     ];
-let getBookTitle = books.find(book => book.id == 1)
+let getBookTitle = books.find(book => book.id === 1)
 
 let getOldBooks = books.filter(book => book.year < 1950)
 
-const addGenre = [...books].forEach(book) => books.set(genre: "Classic");
+let addGenre = books.map(book => ({...book, genre: 'Classic'}))
 
 
 //Exersice 8
@@ -77,7 +82,7 @@ phoneBookDEF.set('David', '3372012018')
 phoneBookDEF.set('Evan', '3372091844')
 phoneBookDEF.set('Frank', '3372084018')
 phoneBookABC.set('Caroline', '3372073099')
-function printPhoneBook(map){
+function printPhoneBook(contacts){
     map.forEach((name, number) => {
         console.log(name, number);
     });
@@ -95,7 +100,7 @@ let salaries = {
     "Christina" : 75000,
     "James" : 43000
     };
-    const sumSalaries = salaries.reduce(currentTotal, currentSalary) => currentTotal + currentSalary;
+    const sumSalaries = salaries.reduce((currentTotal, currentSalary) => currentTotal + currentSalary,0);
 
 //Exersice 10
 const today = new Date();
