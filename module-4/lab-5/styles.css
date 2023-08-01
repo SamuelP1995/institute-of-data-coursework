@@ -1,0 +1,27 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: white;
+  }
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    position: relative;
+    animation: moveTopToBottom 5s  infinite;
+  }
+  
+  @keyframes moveTopToBottom {
+    0%, 100% {
+        top: 0;
+        background-color: blue;
+    }
+    50% {
+      top: 50px;
+      background-color: red; 
+      
+    }
+  }

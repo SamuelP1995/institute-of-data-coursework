@@ -1,0 +1,59 @@
+<!DOCTYPE html> <html>
+   <head>
+       <style>
+           body {
+             font-family: Arial, Helvetica, sans-serif;
+-color: #e3f2fd;
+          padding: 10px;
+}
+.card-title {
+font-weight: 600; font-size: 3em; padding: 0 0 10px 0;
+        }
+        .card-description {
+          font-weight: 400;
+font-size: 2em }
+    </style>
+</head>
+background
+} .card {
+<body> 
+    <div id="card-template"> 
+        <div class="card">
+          <div class="card-body">
+    <div class="card-title"></div>
+    <div class="card-text"></div>
+</div> </div>
+template
+</ >
+<div id="card-list">
+    
+</div> </body>
+</html>
+
+<script>
+    function addCard(name,age) {
+        const template = document.getElementById("card-template").content.cloneNode(true); 
+        
+        template.querySelector('.card-title').innerText = name; 
+        template.querySelector('.card-text').innerText = age; 
+        document.querySelector('#card-list').appendChild(template);
+    }
+    if ('content' in document.createElement('template')) {
+    addCard();
+    }
+    const data = [
+        {name: 'bob', age: 23, img: 'https://images.pexels.com/photos/16164481/pexels-photo-16164481/free-photo-of-close-up-of-sleeping-cat.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load', altText: 'sleeping cat'}, 
+        {name: 'alice', age: 39, img: 'https://images.pexels.com/photos/17718121/pexels-photo-17718121.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load', altText: 'sunflower'}, 
+        {name: 'Jill', age: 24, img: 'https://images.pexels.com/photos/17487082/pexels-photo-17487082/free-photo-of-tenango-de-las-flores-puebla.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load', altText: 'boat'}, 
+        {name: 'Alex', age: 39, img: 'https://images.pexels.com/photos/6287286/pexels-photo-6287286.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load', altText: 'pasta'},
+        {name:'tom', age: 24, img: 'https://images.pexels.com/photos/17719833/pexels-photo-17719833/free-photo-of-wood-city-street-dirty.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load', altText: 'bike'}, 
+        {name: 'bill', age: 28, img: 'https://images.pexels.com/photos/3637653/pexels-photo-3637653.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load', altText: 'lighthouse'}]
+
+for (let i = 0; i < data.length; i++) {
+    const {name,age, img} = data[i] 
+    addCard(name, age)
+}
+
+
+
+</script>
