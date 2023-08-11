@@ -10,8 +10,7 @@ router.get('/add', (req,res) => {
     const {num1, num2} = req.query;
 
     const total = parseInt(num1) + parseInt(num2); 
-
-
+    
 //    res.send(`The sum of ${num1} and ${num2} is ${total}`)
 
     res.status(200);
