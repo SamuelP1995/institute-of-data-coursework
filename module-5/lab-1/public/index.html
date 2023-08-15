@@ -38,84 +38,8 @@
           <td> <input type="button" value="*" onclick="display('*')" /> </td>
         </tr>
       </table>
+
+     <script src="./js/calculator.js"></script> 
+
 </body>
-
-<script>
-function clearScreen() {
-    document.getElementById("result").value = "";
-}
-function display(value) {
-    document.getElementById("result").value += value;
-}
-
-
-function calculate() {
-    try {
-    let value = document.getElementById("result").value;
-    console.log({value})
-    
-    if (value.includes("+")){
-        const [num1, num2] = value.split('+');
-
-        console.log({num1, num2, operator: '+'});
-
-        fetch(`/calculator/add?num1=${num1}&num2=${num2}`)
-            .then(res => res.json())
-            .then(json => {
-                console.log({json})
-                const result = json.result;
-                document.getElementById("result").value = result;
-            })
-            .catch(e => console.log(e))
-    }
-    if (value.includes("-")){
-        const [num1, num2] = value.split('-');
-
-        console.log({num1, num2, operator: '-'});
-
-        fetch(`/calculator/subtract?num1=${num1}&num2=${num2}`)
-            .then(res => res.json())
-            .then(json => {
-                console.log({json})
-                const result = json.result;
-                document.getElementById("result").value = result;
-            })
-            .catch(e => console.log(e))
-    }
-    if (value.includes("/")){
-        const [num1, num2] = value.split('/');
-
-        console.log({num1, num2, operator: '/'});
-
-        fetch(`/calculator/divide?num1=${num1}&num2=${num2}`)
-            .then(res => res.json())
-            .then(json => {
-                console.log({json})
-                const result = json.result;
-                document.getElementById("result").value = result;
-            })
-            .catch(e => console.log(e))
-    }
-    if (value.includes("*")){
-        const [num1, num2] = value.split('*');
-
-        console.log({num1, num2, operator: '*'});
-
-        fetch(`/calculator/multiply?num1=${num1}&num2=${num2}`)
-            .then(res => res.json())
-            .then(json => {
-                console.log({json})
-                const result = json.result;
-                document.getElementById("result").value = result;
-            })
-            .catch(e => console.log(e))
-    }
-    } catch (error) {
-        console.log(error);
-        display.value = "Error";
-    }
-
-    
-}
-</script>
 </html>

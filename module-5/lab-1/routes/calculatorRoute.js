@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const calculatorController = require('../controllers/calculatorController.js');
 
 
 router.get('/', (req,res) => {
@@ -7,42 +8,19 @@ router.get('/', (req,res) => {
 })
 
 router.get('/add', (req,res) => {
-    const {num1, num2} = req.query;
-
-    const total = parseInt(num1) + parseInt(num2); 
-    
-//    res.send(`The sum of ${num1} and ${num2} is ${total}`)
-
-    res.status(200);
-    res.json({result:total});
-
+    calculatorController.addNumbers(req,res)
 })
 
-router.get('/subtract', (req,res) => {
-    const {num1, num2} = req.query;
-
-    const total = parseInt(num1) - parseInt(num2); 
-
-    res.status(200);
-    res.json({result:total});
+router.get("/subtract/:num1/:num2", (req,res) => {
+     calculatorController.subtractNumbers(req,res)
 })
 
-router.get('/multiply', (req,res) => {
-    const {num1, num2} = req.query;
-
-    const total = parseInt(num1) * parseInt(num2); 
-
-    res.status(200);
-    res.json({result:total});
+router.post('/multiply', (req,res) => {
+     calculatorController.multiplyNumbers(req,res)
 })
 
-router.get('/divide', (req,res) => {
-    const {num1, num2} = req.query;
-
-    const total = parseInt(num1) / parseInt(num2); 
-
-    res.status(200);
-    res.json({result:total});
+router.post('/divide', (req,res) => {
+     calculatorController.divideNumbers(req,res)
 })
 
 module.exports = router;
