@@ -6,11 +6,11 @@ let Controllers = require("../controllers");
 
 
 router.get('/', (req, res) => {
-    Controllers.userController.getUsers(res);
+    Controllers.userController.getUsers(req, res);
 })
 
 router.post('/create', (req, res) => {
-    Controllers.userController.createUser(req.body, res)
+    Controllers.userController.createUser(req, res)
 })
 
 router.put('/:id', (req, res) => {
@@ -20,6 +20,8 @@ router.put('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
     Controllers.userController.deleteUser(req, res)
 })
+
+
 
 
 module.exports = router;

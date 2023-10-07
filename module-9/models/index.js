@@ -1,6 +1,15 @@
 'use strict'
 
+const User = require('./user');
+const Post = require('./post');
+const Comment = require('./comment');
+const Like = require('./like');
 
-module.exports = {
-    User: require('./user')
-};
+const Models = {
+    User, 
+    Post,
+    Comment,
+    Like
+}
+
+module.exports = Models;

@@ -1,9 +1,9 @@
 "use strict";
 
-
 let Models = require("../models"); 
 
-const getUsers = (res) => {
+
+const getUsers = (req, res) => {
     Models.User.find({})
         .then(data => res.send({result: 200, data: data}))
         .catch(err => {
@@ -12,9 +12,8 @@ const getUsers = (res) => {
         })
 }
 
-const createUser = (data, res) => {
-    console.log(data)
-    new Models.User(data).save()
+const createUser = (req, res) => {
+    new Models.User(req.body).save()
         .then(data => res.send({result: 200, data: data}))
         .catch(err => {
             console.log(err);
@@ -24,7 +23,8 @@ const createUser = (data, res) => {
 
 const updateUser = (req, res) => {
     console.log(req.body)
-    Models.User.findByIdAndUpdate(req.params.id, req.body, { useFindAndModify: false })
+    Models.User.findByIdAndUpdate(req.params.id, req.body, { 
+    useFindAndModify: false })
         .then(data => res.send({result: 200, data: data}))
         .catch(err => {
             console.log(err);
@@ -44,5 +44,5 @@ const deleteUser = (req, res) => {
 
 
 module.exports = {
-    getUsers, createUser, updateUser, deleteUser
+    getUsers, createUser, updateUser, deleteUser, 
 }

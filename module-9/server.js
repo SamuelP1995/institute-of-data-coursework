@@ -2,7 +2,12 @@ const express = require("express");
 const app = express();
 require("dotenv").config();
 const dbConnect = require("./dbConnect");
+
 const userRoutes = require('./routes/userRoutes');
+const postRoutes = require('./routes/postRoutes');
+const commentRoutes = require('./routes/commentRoutes');
+const likeRoutes = require("./routes/likeRoutes");
+
 const morgan = require("morgan");
 
 app.use(morgan("tiny"));
@@ -13,6 +18,9 @@ app.get("/", (req, res) => {
 });
 
 app.use('/api/users', userRoutes)
+app.use('/api/posts', postRoutes)
+app.use('/api/comments', commentRoutes)
+app.use('/api/likes', likeRoutes)
 
 const PORT = process.env.PORT || 8080;
 
