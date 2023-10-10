@@ -21,6 +21,16 @@ const getPosts = (res) => {
         })
 }
 
+const getPostById = (req, res) => {
+    const id = req.params.id;
+    Models.Post.findOne({ where: { id: req.params.id }})
+        .then(data => {
+            res.send({ result: 200, data: data })
+        }).catch(err => {
+            throw err
+        })
+}
+
 const updatePost = (req, res) => {
     Models.Post.update(req.body, { where: { id: req.params.id }})
         .then(data => {
@@ -30,6 +40,8 @@ const updatePost = (req, res) => {
         })
 }
 
+
+
 module.exports = {
-    createPost, getPosts, updatePost
+    createPost, getPosts, getPostById,  updatePost
 }
