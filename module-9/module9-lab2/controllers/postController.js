@@ -12,7 +12,7 @@ const createPost = (req, res) => {
     })
 }
 
-const getPosts = (res) => {
+const getPosts = (req, res) => {
     Models.Post.findAll({})
         .then(data => {
             res.send({ result: 200, data: data })
@@ -22,7 +22,6 @@ const getPosts = (res) => {
 }
 
 const getPostById = (req, res) => {
-    const id = req.params.id;
     Models.Post.findOne({ where: { id: req.params.id }})
         .then(data => {
             res.send({ result: 200, data: data })
@@ -40,8 +39,15 @@ const updatePost = (req, res) => {
         })
 }
 
-
+const deletePost = (req, res) => {
+    Models.Post.destroy({ where: { id: req.params.id }})
+        .then(data => {
+            res.send({ result: 200, data: data })
+        }).catch(err => {
+            throw err
+        })
+}
 
 module.exports = {
-    createPost, getPosts, getPostById,  updatePost
+    createPost, getPosts, getPostById, updatePost, deletePost
 }
