@@ -8,7 +8,7 @@ const createLike = (req, res) => {
     .then(data => {
         res.send({ result: 200, data: data })
     }).catch(err => {
-        throw err
+        console.log(err)
     })
 }
 
@@ -17,7 +17,7 @@ const getLikes = (req, res) => {
     .then(data => {
         res.send({ result: 200, data: data })
     }).catch(err => {
-        throw err
+        console.log(err)
     })
 }
 
@@ -26,7 +26,7 @@ const deleteLike = (req, res) => {
         .then(data => {
             res.send({ result: 200, data: data })
         }).catch(err => {
-            throw err
+            console.log(err)
         })
 }
 

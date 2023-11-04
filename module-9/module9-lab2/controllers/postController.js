@@ -8,7 +8,7 @@ const createPost = (req, res) => {
     .then(data => {
         res.send({ result: 200, data: data })
     }).catch(err => {
-        throw err
+        console.log(err)
     })
 }
 
@@ -17,7 +17,7 @@ const getPosts = (req, res) => {
         .then(data => {
             res.send({ result: 200, data: data })
         }).catch(err => {
-            throw err
+            console.log(err)
         })
 }
 
@@ -26,7 +26,7 @@ const getPostById = (req, res) => {
         .then(data => {
             res.send({ result: 200, data: data })
         }).catch(err => {
-            throw err
+            console.log(err)
         })
 }
 
@@ -35,7 +35,7 @@ const updatePost = (req, res) => {
         .then(data => {
             res.send({ result: 200, data: data })
         }).catch(err => {
-            throw err
+            console.log(err)
         })
 }
 
@@ -44,8 +44,22 @@ const deletePost = (req, res) => {
         .then(data => {
             res.send({ result: 200, data: data })
         }).catch(err => {
-            throw err
+            console.log(err)
         })
+    Models.Comment.destroy({ where: { postId: req.params.id }})
+        .then(data => {
+            res.send({ result: 200, data: data })
+        }).catch(err => {
+            console.log(err)
+        })
+    Models.Like.destroy({ where: { postId: req.params.id }})
+        .then(data => {
+            res.send({ result: 200, datt: data })
+        }).catch(err => {
+            console.log(err)
+        })
+        // lookup likes when that postId and and destroy them
+        // lookup comments with that postId and destroy them
 }
 
 module.exports = {

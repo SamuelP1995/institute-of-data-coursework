@@ -9,7 +9,7 @@ const getUsers = (res) => {
         .then(data => {
             res.send({ result: 200 , data: data })
         }).catch(err => {
-            throw err
+            console.log(err)
         })
 }
 
@@ -19,7 +19,7 @@ const createUsers = (req, res) => {
             res.send({ result: 200 , data: data })
         })
         .catch(err => {
-            throw err
+            console.log(err)
         })
 }
 
@@ -28,7 +28,7 @@ const updateUser = (req, res) => {
         .then(data => {
             res.send({ result: 200, data: data })
         }).catch(err => {
-            throw err
+            console.log(err)
         })
 }
 
@@ -37,7 +37,7 @@ const deleteUser = (req, res) => {
         .then(data => {
             res.send({ result: 200, data: data })
         }).catch(err => {
-            throw err
+            console.log(err)
         })
 }
 

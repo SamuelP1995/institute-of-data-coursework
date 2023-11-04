@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
     Controllers.userController.getUsers(req, res);
 })
 
-router.post('/create', (req, res) => {
+router.post('/', (req, res) => {
     Controllers.userController.createUser(req, res)
 })
 

@@ -8,17 +8,17 @@ const createComment = (req, res) => {
     .then(data => {
         res.send({ result: 200, data: data })
     }).catch(err => {
-        throw err
+        console.log(err)
     })
 }
 
 const getComments = (req, res) => {
     Models.Comment.findAll({})
-    .then(data => {
-        res.send({ result: 200, data: data })
-    }).catch(err => {
-        throw err
-    })
+        .then(data => {
+            res.send({ result: 200, data: data })
+        }).catch(err => {
+            console.log(err)
+        })
 }
 
 const getCommentById = (req, res) => {
@@ -26,7 +26,7 @@ const getCommentById = (req, res) => {
         .then(data => {
             res.send({ result: 200, data: data })
         }).catch(err => {
-            throw err
+            console.log(err)
         })
 }
 
@@ -35,7 +35,7 @@ const updateComment = (req, res) => {
         .then(data => {
             res.send({ result: 200, data: data })
         }).catch(err => {
-            throw err
+            console.log(err)
         })
 }
 
@@ -44,7 +44,7 @@ const deleteComment = (req, res) => {
         .then(data => {
             res.send({ result: 200, data: data })
         }).catch(err => {
-            throw err
+            console.log(err)
         })
 }
 

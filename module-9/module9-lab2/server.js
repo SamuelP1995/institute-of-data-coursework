@@ -1,11 +1,12 @@
 const express = require("express");
 require("dotenv").config();
 const morgan = require('morgan');
-const dbConnect = require("./dbConnect");
+require("./dbConnect");
 const userRoutes = require('./routes/userRoutes');
 const postRoutes = require('./routes/postRoutes');
 const commentRoutes = require('./routes/commentRoutes');
 const likeRoutes = require('./routes/likeRoutes');
+const pokemonRoutes = require('./routes/pokemonRoutes');
 
 
 const app = express();
@@ -17,6 +18,7 @@ app.use('/api/users', userRoutes);
 app.use('/api/posts', postRoutes);
 app.use('/api/comments', commentRoutes);
 app.use('/api/likes', likeRoutes);
+app.use('/api/pokemon', pokemonRoutes);
 
 app.get("/", (req, res) => {
     res.json({ message: "Welcome to myMySQL application." });

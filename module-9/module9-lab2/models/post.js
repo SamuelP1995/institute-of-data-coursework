@@ -6,16 +6,22 @@ class Post extends Model { }
 
 Post.init({
     id: {
-        type: DataTypes.INTEGER, allowNull: false, autoIncrement: true, primaryKey: true 
+        type: DataTypes.INTEGER, 
+        allowNull: false, 
+        autoIncrement: true, 
+        primaryKey: true 
     },
     title: {
-        type: DataTypes.STRING, allowNull: false 
+        type: DataTypes.STRING, 
+        allowNull: false 
     },
     description: {
-        type: DataTypes.STRING, allowNull: false
+        type: DataTypes.STRING, 
+        allowNull: false
     },
     image: {
-        type: DataTypes.STRING, allowNull: true
+        type: DataTypes.STRING, 
+        allowNull: true
     }},
     {
         sequelize: sequelizeInstance, modelName: 'posts',
