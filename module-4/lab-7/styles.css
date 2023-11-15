@@ -1,0 +1,123 @@
+*{
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Helvetica Neue','Arial Nova',Helvetica,Arial,sans-serif;
+}
+.row {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.row > div {
+    background-color: skyblue;
+}
+a:link{
+    color: black;
+}
+a:visited{
+    color: whitesmoke;
+}
+a:hover{
+    color: bisque;
+}
+a:active{
+    color: white;
+}
+.three_columns{
+    display: inline-flex;
+    justify-content: center;
+}
+.col-1{
+   display: inline-block; 
+   float: left;
+   border-right: 30px;
+   height: 1400px;
+   background-color: skyblue;
+}
+.col-1 > div{
+    background-color: skyblue;
+}
+.middle-column{
+    background-color: thistle;
+}
+.col-10{
+    display: inline-block;
+    top: 0; 
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.col-10 > div {
+    flex-flow: row nowrap;
+    top: 0;
+}
+.newsfeed > div {
+    margin-bottom: 10px ;
+
+}
+.animations {
+
+}
+.ball_animation {
+    width: 50px;
+    height: 50px;
+    background-color: yellow;
+    border-radius: 50%;
+    position: relative;
+    left: 50%;
+    bottom: 100px;
+    animation: bounce 8s infinite;
+}      
+.ball_animation2 {
+    width: 50px;
+    height: 50px;
+    background-color: green;
+    border-radius: 50%;
+    position: relative;
+    left: 30%;
+    top: 100px;
+    animation: bounce 5s infinite;
+}      
+.ball_animation3 {
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    border-radius: 50%;
+    position: relative;
+    left: 90%;
+    top: 100px;
+    animation: bounce 10s infinite;
+}      
+.ball_animation4 {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border-radius: 50%;
+    position: relative;
+    left: 70%;
+    top: 100px;
+    animation: bounce 4s infinite;
+}  
+.ball_animation5 {
+    width: 50px;
+    height: 50px;
+    background-color: orange;
+    border-radius: 50%;
+    position: relative;
+    left: 10%;
+    top: 100px;
+    animation: bounce 7s infinite;
+}  
+@keyframes bounce {
+    0%, 100% {
+    transform: translateY(0);
+    }
+    25% {
+      transform: translateY(-1000px);
+    }
+}
+.right_side_bar {
+    float: right;
+    align-items: flex-start;
+    background-color: beige;
+}
